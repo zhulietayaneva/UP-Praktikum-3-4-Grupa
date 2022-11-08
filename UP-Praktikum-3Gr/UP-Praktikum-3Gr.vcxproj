@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="UP-Praktikum-3Gr.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UP-Praktikum-3Gr.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

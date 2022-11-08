@@ -1,12 +1,8 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include "UP-Praktikum-3Gr.h"
 using namespace std;
-
-
-
-
-
 
 
 bool isCorrectFormat(int hours, int minutes, int minutesToAdd) {
@@ -159,10 +155,134 @@ char sign(int n) {
 int absolute(int input) {
 	return abs(input);
 }
+void printInput()
+{
+	char str[100];
+	cin.getline(str,100);
+	cout << str;
+}
+void swapCase()
+{
+	char str[100];
+	cin.getline(str, 100);
+	int len = strlen(str);
+	for (int i = 0; i < len; i++)
+	{
+		if (str[i]>='A' && str[i]<='Z')
+		{
+			str[i] += 32;
+		}
+		else if(str[i]>='a' && str[i]<='z')
+		{
+			str[i] -= 32;
+		}
+	}
+	cout << str;
 
+}
+void copyString()
+{
+	char str1[100];
+	char str2[100];
+	cin.getline(str1, 100);
+	cin.getline(str2, 100);
+
+	strcpy_s(str1, str2);
+	cout << "First string: " << str1 << endl;
+	cout << "Second string: " << str2 << endl;
+
+
+}
+void concatStrings()
+{
+	char str1[100];
+	char str2[100];
+	char str3[100];
+	cin.getline(str1, 100);
+	cin.getline(str2, 100);
+	cin.getline(str3, 100);
+
+	strcat_s(str1, str2);
+	strcat_s(str1, str3);
+
+	cout << str1;
+}
+void reverseString()
+{
+	char str1[100];
+	char str2[100];
+	cin.getline(str1, 100);
+	int index = 0;
+	for (int i = strlen(str1)-1; i >=0; i--)
+	{
+		str2[index] = str1[i];
+		index++;
+	}
+	str2[strlen(str1)] = '\0';
+	cout << str2;
+}
+bool isVowel(char a) 
+{	
+	if (a=='a' || a=='A' || a=='y' || a=='Y' || a=='O' || a=='o' || a=='u' ||a=='U'||a=='e' ||a=='E' || a=='i' ||a=='I')
+	{
+		return true;
+	}
+	return false;
+}
+void countOfVowels() 
+{
+	char str[100];
+	cin.getline(str, 100);
+	int count = 0;
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (isVowel(str[i]))
+		{
+			count++;
+		}
+	}
+	cout << count;
+
+}
+int lengthOfWord(char word[])
+{
+	return strlen(word);
+}
+
+void printLongestWord() {
+	char str[256];
+	cin.getline(str, 256);
+	
+	int firstWordIndex = 0;
+	int lastWordIndex = 0;
+	int maxWordLength = 0;
+	char maxWord[256];
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if ( !(str[i] >= 'A' && str[i] <= 'Z') && !(str[i] >= 'a' && str[i] <= 'z') )
+		{
+			lastWordIndex = i;
+			char temp[256];
+			int count = 0;
+			for (int j = firstWordIndex; j < i; j++)
+			{
+				temp[count] = str[j];
+				count++;
+			}
+			temp[count] = '\0';
+			firstWordIndex = i + 1;
+			if (lengthOfWord(temp)>maxWordLength)
+			{
+				maxWordLength == lengthOfWord(temp);
+				strcpy_s(maxWord, temp);
+			}
+		}
+	}
+	cout << maxWord;
+}
 int main()
 {
+	printLongestWord();
 	
-
 }
 
