@@ -3,8 +3,9 @@
 #include <limits>
 #include "UP-Praktikum-3Gr.h"
 using namespace std;
+constexpr int MAX_SIZE = 255;
 
-
+/*
 bool isCorrectFormat(int hours, int minutes, int minutesToAdd) {
 	if (hours >= 0 && hours <= 24 && minutes <= 59 && minutes >= 0 && minutesToAdd <= minutes)
 	{
@@ -248,7 +249,6 @@ int lengthOfWord(char word[])
 {
 	return strlen(word);
 }
-
 void printLongestWord() {
 	char str[256];
 	cin.getline(str, 256);
@@ -280,9 +280,72 @@ void printLongestWord() {
 	}
 	cout << maxWord;
 }
+*/
+
+
+//pointers
+void swap(int &x, int &y) {
+	
+	int *a,*b, temp;
+
+	a = &x;
+	b = &y;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+	
+	/*int x, y, z;
+	cin >> x >> y>>z;
+	swap(x, y);
+	cout<<x<<' '<<y;*/
+
+}
+
+int sum(int &x, int &y, int &z) {
+	
+	int* a = &x;	
+	int* b = &y;
+	int* c = &z;
+
+	*c = *a + *b;
+	
+	return z;
+
+	/*int x, y, z;
+	cin >> x >> y>>z;
+	swap(x, y);
+	cout<<sum(x, y, z);*/
+}
+
+void findLength(int* first, int* last) {
+
+	
+	while (last!=first)
+	{
+		cout << *first<<' ';
+		first++;
+	}
+	cout << *first++;
+
+	/*
+	int arr[5] = { 1,2,3,4,5 };
+	findLength(&arr[0],&arr[4]);
+	*/
+
+}
+
 int main()
 {
-	printLongestWord();
+	
+	
+	
+	
+
+
+
+
+
 	
 }
 
