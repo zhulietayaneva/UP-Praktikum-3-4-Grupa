@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <limits>
 #include "UP-Praktikum-3Gr.h"
 using namespace std;
@@ -301,7 +301,6 @@ void swap(int &x, int &y) {
 	cout<<x<<' '<<y;*/
 
 }
-
 int sum(int &x, int &y, int &z) {
 	
 	int* a = &x;	
@@ -317,7 +316,6 @@ int sum(int &x, int &y, int &z) {
 	swap(x, y);
 	cout<<sum(x, y, z);*/
 }
-
 void findLength(int* first, int* last) {
 
 	
@@ -334,6 +332,70 @@ void findLength(int* first, int* last) {
 	*/
 
 }
+int* findMidEl(int* first, int* last) {
+
+	int count = 1;
+	while (last!=first)
+	{
+		count++;
+		first++;
+	}
+
+	int* a = last - count/2;
+
+	return a;
+
+	/*
+	int arr[5] = { 1,2,3,4,5 };
+	findLength(&arr[0],&arr[4]);
+	*/
+
+}
+bool isLetter(char a) {
+
+	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+	{
+		return true;
+	}
+	return false;
+}
+bool isVowel(char a) {
+
+	if (a=='a' || a=='y' || a == 'o' || a == 'u' || a == 'e' || a == 'i')
+	{
+		return true;
+	}
+	return false;
+}
+void countOfConsAndVowels(char *arr, char* last) {
+
+	int countOfConsonants=0;
+	int countOfVowels=0;
+
+	char *first = arr;
+
+	while (last!=first)
+	{
+		if (isLetter(*last)&& isVowel(*last))
+		{
+			countOfVowels++;
+		}
+		else
+		{
+			countOfConsonants++;
+		}
+		last--;
+	}
+
+	cout << "glasni: " << countOfVowels << endl;
+	cout << "suglasni: " << countOfConsonants << endl;
+
+	/*char arr[] = "Hello";
+	countOfConsAndVowels(arr, &arr[strlen(arr)]);*/
+
+}
+
+
 
 int main()
 {
@@ -341,11 +403,6 @@ int main()
 	
 	
 	
-
-
-
-
-
 	
 }
 
