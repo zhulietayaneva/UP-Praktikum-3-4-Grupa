@@ -3,8 +3,8 @@
 #include <limits>
 #include "UP-Praktikum-3Gr.h"
 using namespace std;
-constexpr int MAX_SIZE = 255;
 
+//char[]
 /*
 bool isCorrectFormat(int hours, int minutes, int minutesToAdd) {
 	if (hours >= 0 && hours <= 24 && minutes <= 59 && minutes >= 0 && minutesToAdd <= minutes)
@@ -282,124 +282,169 @@ void printLongestWord() {
 }
 */
 
-
+/*pointers*/
 //pointers
-void swap(int &x, int &y) {
-	
-	int *a,*b, temp;
+//
+//void swap(int &x, int &y) {
+//	
+//	int *a,*b, temp;
+//
+//	a = &x;
+//	b = &y;
+//
+//	temp = *a;
+//	*a = *b;
+//	*b = temp;
+//	
+//	/*int x, y, z;
+//	cin >> x >> y>>z;
+//	swap(x, y);
+//	cout<<x<<' '<<y;*/
+//
+//}
+//int sum(int &x, int &y, int &z) {
+//	
+//	int* a = &x;	
+//	int* b = &y;
+//	int* c = &z;
+//
+//	*c = *a + *b;
+//	
+//	return z;
+//
+//	/*int x, y, z;
+//	cin >> x >> y>>z;
+//	swap(x, y);
+//	cout<<sum(x, y, z);*/
+//}
+//void findLength(int* first, int* last) {
+//
+//	
+//	while (last!=first)
+//	{
+//		cout << *first<<' ';
+//		first++;
+//	}
+//	cout << *first++;
+//
+//	/*
+//	int arr[5] = { 1,2,3,4,5 };
+//	findLength(&arr[0],&arr[4]);
+//	*/
+//
+//}
+//int* findMidEl(int* first, int* last) {
+//
+//	int count = 1;
+//	while (last!=first)
+//	{
+//		count++;
+//		first++;
+//	}
+//
+//	int* a = last - count/2;
+//
+//	return a;
+//
+//	/*
+//	int arr[5] = { 1,2,3,4,5 };
+//	findLength(&arr[0],&arr[4]);
+//	*/
+//
+//}
+//bool isLetter(char a) {
+//
+//	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//bool isVowel(char a) {
+//
+//	if (a=='a' || a=='y' || a == 'o' || a == 'u' || a == 'e' || a == 'i')
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//void countOfConsAndVowels(char *arr, char* last) {
+//
+//	int countOfConsonants=0;
+//	int countOfVowels=0;
+//
+//	char *first = arr;
+//
+//	while (last!=first)
+//	{
+//		if (isLetter(*last)&& isVowel(*last))
+//		{
+//			countOfVowels++;
+//		}
+//		else
+//		{
+//			countOfConsonants++;
+//		}
+//		last--;
+//	}
+//
+//	cout << "glasni: " << countOfVowels << endl;
+//	cout << "suglasni: " << countOfConsonants << endl;
+//
+//	/*char arr[] = "Hello";
+//	countOfConsAndVowels(arr, &arr[strlen(arr)]);*/
+//
+//}
 
-	a = &x;
-	b = &y;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
-	
-	/*int x, y, z;
-	cin >> x >> y>>z;
-	swap(x, y);
-	cout<<x<<' '<<y;*/
+/*recursion*/
+int pow(int a, int p) {
 
-}
-int sum(int &x, int &y, int &z) {
-	
-	int* a = &x;	
-	int* b = &y;
-	int* c = &z;
-
-	*c = *a + *b;
-	
-	return z;
-
-	/*int x, y, z;
-	cin >> x >> y>>z;
-	swap(x, y);
-	cout<<sum(x, y, z);*/
-}
-void findLength(int* first, int* last) {
-
-	
-	while (last!=first)
+	if (p==1)
 	{
-		cout << *first<<' ';
-		first++;
+		return a;
 	}
-	cout << *first++;
-
-	/*
-	int arr[5] = { 1,2,3,4,5 };
-	findLength(&arr[0],&arr[4]);
-	*/
-
+	return a*pow(a, p-1);
+	//cout << pow(2,3)<<endl;
 }
-int* findMidEl(int* first, int* last) {
-
-	int count = 1;
-	while (last!=first)
+int fact(int num) {
+	if (num==1)
 	{
-		count++;
-		first++;
+		return num;
 	}
-
-	int* a = last - count/2;
-
-	return a;
-
-	/*
-	int arr[5] = { 1,2,3,4,5 };
-	findLength(&arr[0],&arr[4]);
-	*/
-
+	return num*fact(num - 1);
+	//cout << fact(5) << endl;
 }
-bool isLetter(char a) {
-
-	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+int fib(int pos) {
+	if (pos==1 || pos==2)
 	{
-		return true;
+		return 1;
 	}
-	return false;
+	return fib(pos - 1) + fib(pos - 2);
+	//cout << fib(5) << endl;
 }
-bool isVowel(char a) {
-
-	if (a=='a' || a=='y' || a == 'o' || a == 'u' || a == 'e' || a == 'i')
+int countOfDigits(int n) {
+	if (n==1)
 	{
-		return true;
+		return 1;
 	}
-	return false;
+	return 1+countOfDigits(n / 10);
+	//cout << countOfDigits(1200);
 }
-void countOfConsAndVowels(char *arr, char* last) {
-
-	int countOfConsonants=0;
-	int countOfVowels=0;
-
-	char *first = arr;
-
-	while (last!=first)
+char* reverseDigits(int n) {
+	
+	if (n<10)
 	{
-		if (isLetter(*last)&& isVowel(*last))
-		{
-			countOfVowels++;
-		}
-		else
-		{
-			countOfConsonants++;
-		}
-		last--;
+		return '0'+n/10;
 	}
 
-	cout << "glasni: " << countOfVowels << endl;
-	cout << "suglasni: " << countOfConsonants << endl;
-
-	/*char arr[] = "Hello";
-	countOfConsAndVowels(arr, &arr[strlen(arr)]);*/
-
+	return '0'+n / 10 + (reverseDigits(n / 10));
 }
-
-
 
 int main()
 {
 	
+
 	
 	
 	
