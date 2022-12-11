@@ -283,7 +283,7 @@ void printLongestWord() {
 */
 
 /*pointers*/
-//pointers
+
 //
 //void swap(int &x, int &y) {
 //	
@@ -368,7 +368,7 @@ void printLongestWord() {
 //	}
 //	return false;
 //}
-//void countOfConsAndVowels(char *arr, char* last) {
+//void countOfConsAndVowels(char* arr, char* last) {
 //
 //	int countOfConsonants=0;
 //	int countOfVowels=0;
@@ -377,76 +377,117 @@ void printLongestWord() {
 //
 //	while (last!=first)
 //	{
-//		if (isLetter(*last)&& isVowel(*last))
+//		if (isLetter(*last))
 //		{
-//			countOfVowels++;
-//		}
-//		else
-//		{
-//			countOfConsonants++;
+//			if (isVowel(*last))
+//			{
+//				countOfVowels++;
+//			}
+//			else
+//			{
+//				countOfConsonants++;
+//			}
 //		}
 //		last--;
 //	}
 //
 //	cout << "glasni: " << countOfVowels << endl;
 //	cout << "suglasni: " << countOfConsonants << endl;
+//	
+//
 //
 //	/*char arr[] = "Hello";
 //	countOfConsAndVowels(arr, &arr[strlen(arr)]);*/
 //
 //}
+//int findSize(int* first, int* last) {
+//	int count = 1;
+//	while (first != last)
+//	{
+//		count++;
+//		first++;
+//	}
+//	return    count;
+//}
+//
+//void sortArray(int* first, int* last) {
+//
+//
+//	int size = findSize(first, last);
+//	for (int i = 0; i < size; i++)
+//	{
+//		for (int j = i + 1; j < size; j++)
+//		{
+//			if ((first + i) > (first + j))
+//			{
+//				int temp = *(first + i);
+//				(first + i) = (first + j);
+//				*(first + j) = temp;
+//
+//			}
+//
+//		}
+//
+//	}
+//
+//
+//}
 
 
 /*recursion*/
-int pow(int a, int p) {
+//int power(int a, int p) {
+//
+//	if (p==1)
+//	{
+//		return a;
+//	}
+//	return a*pow(a, p-1);
+//	//cout << pow(2,3)<<endl;
+//}
+//int fact(int num) {
+//	if (num==1)
+//	{
+//		return num;
+//	}
+//	return num*fact(num - 1);
+//	//cout << fact(5) << endl;
+//}
+//int fib(int pos) {
+//	if (pos==1 || pos==2)
+//	{
+//		return 1;
+//	}
+//	return fib(pos - 1) + fib(pos - 2);
+//	//cout << fib(5) << endl;
+//}
+//int countOfDigits(int n) {
+//	if (n==1)
+//	{
+//		return 1;
+//	}
+//	return 1+countOfDigits(n / 10);
+//	//cout << countOfDigits(1200);
+//}
+//int reverseDigits(int n) {
+//	//todo
+//	
+//	if (n<10)
+//	{
+//		return n;
+//	}
+//
+//	return reverseDigits(n / 10);
+//}
+//int sumOfArr(int* first) {
+//
+//
+//}
 
-	if (p==1)
-	{
-		return a;
-	}
-	return a*pow(a, p-1);
-	//cout << pow(2,3)<<endl;
-}
-int fact(int num) {
-	if (num==1)
-	{
-		return num;
-	}
-	return num*fact(num - 1);
-	//cout << fact(5) << endl;
-}
-int fib(int pos) {
-	if (pos==1 || pos==2)
-	{
-		return 1;
-	}
-	return fib(pos - 1) + fib(pos - 2);
-	//cout << fib(5) << endl;
-}
-int countOfDigits(int n) {
-	if (n==1)
-	{
-		return 1;
-	}
-	return 1+countOfDigits(n / 10);
-	//cout << countOfDigits(1200);
-}
-char* reverseDigits(int n) {
-	
-	if (n<10)
-	{
-		return '0'+n/10;
-	}
-
-	return '0'+n / 10 + (reverseDigits(n / 10));
-}
 
 int main()
 {
-	
 
-	
-	
+
 	
 	
 }
