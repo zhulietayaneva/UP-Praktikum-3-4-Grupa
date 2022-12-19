@@ -478,16 +478,59 @@ void printLongestWord() {
 //
 //	return reverseDigits(n / 10);
 //}
-//int sumOfArr(int* first) {
+//int sumOfArr(int* first, int* last) {
+//
+//	if (first+1 == last) {
+//		return *last+*(first-1);
+//	}
+//	 
+//	return *first + sumOfArr(++first,last);
+//
+//	/*
+//	int arr[] = { 1,2,30 };
+//	cout << sumOfArr(arr,&arr[2]);*/
+//
+//}
+//void PrintRow(int n, char c) {
+//	if (n == 0) {
+//		std::cout << std::endl;
+//		return;
+//	}
+//
+//	std::cout << c;
+//	PrintRow(n - 1, c);
+//}
+//void PrintFigure(int n) {
+//	if (n == 0) {
+//		return;
+//	}
+//
+//	PrintRow(n, '*');
+//
+//	PrintFigure(n - 1);
+//
+//	PrintRow(n, '#');
+//}
+
+
+/*backtracking*/
+//int maxSum(int arr[], int index,int size) {
+//
+//	if (index==size-1)
+//	{
+//		return 0;
+//	}
+//
+//
 //
 //
 //}
 
 
+
 int main()
 {
-
-
+	int arr[] = { 1,2,3,4,5,6,7 };
 	
 	
 }
