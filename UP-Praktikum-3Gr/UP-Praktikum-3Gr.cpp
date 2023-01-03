@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cstring>
 #include <limits>
 #include "UP-Praktikum-3Gr.h"
@@ -527,11 +527,123 @@ void printLongestWord() {
 //}
 
 
+/*structs*/
+
+struct Vector3D
+{
+	double x = 0, y = 0, z = 0;
+};
+/*
+* Пресмята дължината на 1 вектор
+* @param V - векторът, чиято дължина търсим
+* @return the vector length
+* Формула: Корен от (X^2 + Y^2 + Z^2)
+*/
+double Length(const Vector3D& V) 
+{
+	return sqrt( (pow(V.x, 2) + pow(V.y, 2) + pow(V.z, 2)) );
+}
+
+/*
+* Пресмята скаларното произведение на два вектора
+* @param V1 - Първият вектор
+* @param V2 - Вторият вектор
+* @return Скаларното произведение, което се пресмята по следната формула: X1 * X2 + Y1 * Y2 + Z1 * Z2
+*/
+double DotProduct(const Vector3D& V1, const Vector3D& V2)
+{
+	return V1.x * V2.x + V1.y * V2.y + V1.z * V2.z;
+}
+
+/*
+* Пресмята векторното произведение на 2 вектора
+* @param V1 - Първият вектор
+* @param V2 - Вторият вектор
+* @return Вектор, представящ векторното произведение
+* ФОРМУЛА:
+*            | Y1 Y2 |, | Z1 Z2 |, | X1 X2 |
+  V1 x V2 = (|       |, |       |, |       |)
+			 | Z1 Z2 |, | X1 X2 |, | Y1 Y2 |
+*/
+Vector3D CrossProduct(const Vector3D& V1, const Vector3D& V2)
+{
+	Vector3D vec;
+}
+
+/*
+* Пресмята смесеното произведение на 3 вектора
+* @param V1 - Първият вектор
+* @param V2 - Вторият вектор
+* @param V3 - Третият вектор
+* @return Смесеното произведение, което се пресмята по следната формула: Скаларното на V1 с векторното на V2 и V3
+*/
+double Triple(const Vector3D& V1, const Vector3D& V2, const Vector3D& V3);
+
+/*
+* Умножава x, y, z на вектора по скалара
+* @param V - вектор
+* @param scalar - скалара
+*/
+void MultiplyByScalar(Vector3D& V, double scalar);
+
+/*
+* Нормализийра подаден вектор. (Един вектор е нормализиран, когато дължината му е 1)
+* @param V - Векторът, който ще нормализираме
+*/
+void NormalizeVector(Vector3D& V);
+
+/*
+* Връща противоположния вектор (тоест всеки елемент е отрицателният си)
+*/
+Vector3D GetNegative(const Vector3D& V);
+
+/*
+* Намира сбора на два вектора
+* @param V1 - Първият вектор
+* @param V2 - Вторият вектор
+* @return Сборът на 2та вектора
+*/
+Vector3D Sum(const Vector3D& V1, const Vector3D& V2);
+
+/*
+* Намира разликата на 2 вектора (за тази функция използвайте само вече написаните функции)
+*/
+Vector3D Difference(const Vector3D& V1, const Vector3D& V2);
+
+
+//------------------------------------------------------------------------//
+
+struct Employee
+{
+	char name[1024]{};
+	double salary=0;
+	Employee *boss;
+
+	bool operator==(Employee& other)
+	{
+		return strcmp(name, other.name) == 0 && salary == other.salary && boss == other.boss;
+	}
+};
+
+struct Team
+{	
+	char name[1024]{};
+	Employee employees[100];
+	int employeeCount = sizeof(employees) / sizeof(employees[0]);
+
+};
+
+struct Company
+{
+
+};
+
+
 
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7 };
 	
+	Employee emp;
 	
 }
 
